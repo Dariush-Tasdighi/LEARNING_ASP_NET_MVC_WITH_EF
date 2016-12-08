@@ -1,0 +1,44 @@
+﻿@model Models.Role
+
+@{
+	string strTitle = "Details of the Role";
+
+	ViewBag.Title = strTitle;
+}
+
+<h2>
+	@strTitle
+</h2>
+
+<hr />
+
+<div>
+	<dl class="dl-horizontal">
+		<dt>
+			@Html.DisplayNameFor(model => model.IsActive)
+		</dt>
+
+		<dd>
+			@Html.DisplayFor(model => model.IsActive)
+		</dd>
+
+		<dt>
+			@Html.DisplayNameFor(model => model.Name)
+		</dt>
+
+		<dd>
+			@Html.DisplayFor(model => model.Name)
+		</dd>
+
+	</dl>
+</div>
+
+<div class="row">
+	<div class="col-sm-12 links">
+		@Html.ActionLink("Edit", MVC.Roles.Edit(Model.Id))
+		|
+		@Html.ActionLink("Delete", MVC.Roles.Delete(Model.Id))
+		|
+		@Html.ActionLink("Back to List", MVC.Roles.Index())
+	</div>
+</div>

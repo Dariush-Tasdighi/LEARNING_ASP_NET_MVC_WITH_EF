@@ -1,0 +1,56 @@
+﻿@model Models.Role
+
+@{
+	string strTitle = "Delete the Role";
+
+	ViewBag.Title = strTitle;
+}
+
+<h2>
+	@strTitle
+</h2>
+
+<hr />
+
+<h3>
+	Are you sure you want to delete this?
+</h3>
+
+<div>
+	<dl class="dl-horizontal">
+		<dt>
+			@Html.DisplayNameFor(model => model.IsActive)
+		</dt>
+
+		<dd>
+			@Html.DisplayFor(model => model.IsActive)
+		</dd>
+
+		<dt>
+			@Html.DisplayNameFor(model => model.Name)
+		</dt>
+
+		<dd>
+			@Html.DisplayFor(model => model.Name)
+		</dd>
+	</dl>
+
+	@using (Html.BeginForm())
+	{
+		@Html.AntiForgeryToken()
+
+		<div class="form-actions no-color">
+			<button type="submit" class="btn btn-danger" accesskey="D">Delete</button>
+		</div>
+	}
+</div>
+
+<div class="row">
+	<div class="col-sm-12 links">
+		@Html.ActionLink("Details", MVC.Roles.Details(Model.Id))
+		|
+		@Html.ActionLink("Edit", MVC.Roles.Edit(Model.Id))
+		|
+		@Html.ActionLink("Back to List", MVC.Roles.Index())
+	</div>
+</div>
